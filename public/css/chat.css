@@ -1,0 +1,8 @@
+.chat-input{
+    width: 80%;
+    height: 50px;
+    margin: 0 auto;
+    position: fixed;
+    top: 90%;
+    left: 10%;
+}
