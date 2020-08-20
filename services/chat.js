@@ -17,8 +17,8 @@ async function getContent(data){
   // 查找从现在开始，1天内的数据
   return await find({
     createdAt:{
-      $lte:moment().toDate(),
-      $gte:moment().subtract(1,'day').toDate()
+      $gt:moment().subtract(1,'day').toDate(),
+      $lt:moment().toDate()
     }
   })
 }

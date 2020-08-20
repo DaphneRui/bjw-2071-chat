@@ -85,20 +85,45 @@ async function addContent(ctx,next){
   if(user){
     const { nickName, avatar } = JSON.parse(user)
 
+    //从cookies中获取登录时放入的 nickName & avatar
     await services.addContent({ nickName, avatar, content})
 
+    // 获取最新的聊天记录
+    const contents = await services.getContent()
+
     data = {
-      status: 'success'
+      status: 'success',
+      contents
     }
   }
 
   ctx.response.body = data
 }
 
+async function getContent(ctx,next){
+
+  const contents = await services.getContent()
+
+  ctx.response.body = {
+    contents
+  }
+}
+
+// async function getMessage(ctx,next){
+
+//   const contents = await services.getContent()
+
+//   ctx.response.body = {
+//     contents
+//   }
+// }
+
 module.exports = {
 
   login,
   chatLogin,
   chat,
-  addContent
+  addContent,
+  getContent,
+  // getMessage
 }

@@ -9,4 +9,8 @@ module.exports =  (router) => {
   router.get('/chat', controller.chat)
 
   router.post('/chat/addContent', controller.addContent)
+
+  router.get('/chat/getContent', controller.getContent)
+
+  // router.get('/chat/getMessage', controller.getMessage)
 }
