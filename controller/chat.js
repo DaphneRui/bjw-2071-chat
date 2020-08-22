@@ -109,14 +109,7 @@ async function getContent(ctx,next){
   }
 }
 
-// async function getMessage(ctx,next){
 
-//   const contents = await services.getContent()
-
-//   ctx.response.body = {
-//     contents
-//   }
-// }
 
 module.exports = {
 
@@ -124,6 +117,6 @@ module.exports = {
   chatLogin,
   chat,
   addContent,
-  getContent,
-  // getMessage
+  getContent
+
 }

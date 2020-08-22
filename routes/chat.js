@@ -12,5 +12,5 @@ module.exports =  (router) => {
 
   router.get('/chat/getContent', controller.getContent)
 
-  // router.get('/chat/getMessage', controller.getMessage)
+  
 }
